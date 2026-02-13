@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="UTF-8">
+<title>💘 Для тебе</title>
+
+<style>
+body {
+    margin: 0;
+    height: 100vh;
+    background: linear-gradient(135deg,#ff4f8b,#ff9ad5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Arial, sans-serif;
+}
+
+.box {
+    background: white;
+    padding: 40px;
+    border-radius: 25px;
+    text-align: center;
+    width: 350px;
+    box-shadow: 0 0 25px rgba(0,0,0,0.3);
+}
+
+h1 {
+    color: #ff2366;
+}
+
+#text {
+    margin: 20px 0;
+    font-size: 18px;
+}
+
+.buttons {
+    margin-top: 20px;
+}
+
+button {
+    padding: 12px 25px;
+    font-size: 16px;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    margin: 5px;
+}
+
+#yes {
+    background: #ff2366;
+    color: white;
+}
+
+#no {
+    background: #ddd;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="box">
+
+    <h1>💖Адріана, будеш зі мною на Валентина? 💖</h1>
+
+    <div id="text">Обіцяю зробити цей день особливим 😘</div>
+
+    <div class="buttons">
+        <button id="yes" onclick="yes()">Так 💘</button>
+        <button id="no" onclick="no()">Ні 🙈</button>
+    </div>
+
+</div>
+
+
+<script>
+
+let noCount = 0;
+let yesSize = 16;
+
+const texts = [
+    "Точно ні? 😢",
+    "Ну подумай ще раз 🥺",
+    "Я ж стараюсь 💔",
+    "Мені буде сумно без тебе 😭",
+    "Ну будь ласкааа 😍",
+    "Я зроблю сюрприз 😏",
+    "Ти моя мрія 💖",
+    "Ну все, здавайся 😂"
+];
+
+function no() {
+
+    noCount++;
+
+    document.getElementById("text").innerText =
+        texts[noCount % texts.length];
+
+    yesSize += 6;
+
+    document.getElementById("yes").style.fontSize =
+        yesSize + "px";
+}
+
+function yes() {
+
+    document.body.innerHTML = `
+        <div style="
+            text-align:center;
+            color:white;
+            font-family:Arial;
+        ">
+            <h1>💖 УРАААА 💖</h1>
+            <h2>Я тебе дуже люблю 😘</h2>
+            <h3>14 лютого — наш день ❤️🔥</h3>
+        </div>
+    `;
+}
+
+</script>
+
+</body>
+</html>
